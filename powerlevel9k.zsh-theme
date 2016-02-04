@@ -436,11 +436,11 @@ prompt_dir() {
 
   local current_icon=''
   if [[ $(print -P "%~") == '~' ]]; then
-    "$1_prompt_segment" "$0_HOME" "$2" "blue" "$DEFAULT_COLOR" "$current_path" 'HOME_ICON'
+    "$1_prompt_segment" "$0_HOME" "$2" "white" "$DEFAULT_COLOR" "$current_path" 'HOME_ICON'
   elif [[ $(print -P "%~") == '~'* ]]; then
-    "$1_prompt_segment" "$0_HOME_SUBFOLDER" "$2" "blue" "$DEFAULT_COLOR" "$current_path" 'HOME_SUB_ICON'
+    "$1_prompt_segment" "$0_HOME_SUBFOLDER" "$2" "white" "$DEFAULT_COLOR" "$current_path" 'HOME_SUB_ICON'
   else
-    "$1_prompt_segment" "$0_DEFAULT" "$2" "blue" "$DEFAULT_COLOR" "$current_path" 'FOLDER_ICON'
+    "$1_prompt_segment" "$0_DEFAULT" "$2" "white" "$DEFAULT_COLOR" "$current_path" 'FOLDER_ICON'
   fi
 }
 
@@ -660,11 +660,11 @@ prompt_status() {
     if [[ "$RETVAL" -ne 0 ]]; then
       "$1_prompt_segment" "$0_ERROR" "$2" "red" "226" "$RETVAL" 'CARRIAGE_RETURN_ICON'
     else
-      "$1_prompt_segment" "$0_OK" "$2" "$DEFAULT_COLOR" "046" "" 'OK_ICON'
+      "$1_prompt_segment" "$0_OK" "$2" "244" "046" "" 'OK_ICON'
     fi
   else
     if [[ "$RETVAL" -ne 0 ]]; then
-      "$1_prompt_segment" "$0_ERROR" "$2" "$DEFAULT_COLOR" "red" "" 'FAIL_ICON'
+      "$1_prompt_segment" "$0_ERROR" "$2" "244" "red" "" 'FAIL_ICON'
     fi
   fi
 }
